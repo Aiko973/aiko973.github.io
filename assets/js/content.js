@@ -611,7 +611,7 @@ const CONTENT = {
      video   : fichier vidéo local (prioritaire), ex. "assets/video/stjerne.mp4",
                ou une liste ["assets/video/stjerne.webm", "assets/video/stjerne.mp4"].
                Le plus propre : pas d'interface YouTube, lecture immédiate.
-               Voir le README (section « Bannière vidéo ») pour le préparer.
+               Voir GUIDE.md (section « Bannière vidéo ») pour le préparer.
      youtube : vide = la vidéo YouTube du projet ; sinon un autre lien.
      start   : seconde à laquelle la boucle YouTube commence.             */
   banner: {

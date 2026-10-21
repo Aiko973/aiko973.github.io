@@ -622,7 +622,7 @@
      en boucle. L'image du projet reste dessous tant que la vidéo ne joue pas
      (chargement, page ouverte en double-clic, « moins d'animations »…).
      ====================================================================== */
-  var feature = { built: false, player: null, video: null, paused: false, playing: false, visible: true };
+  var feature = { built: false, player: null, video: null, paused: false, playing: false };
 
   function featureProject() {
     var b = CONTENT.banner || {};
@@ -647,11 +647,16 @@
     if (feature.video) feature.video.pause();
     if (feature.player && feature.player.pauseVideo) feature.player.pauseVideo();
   }
-  /* Joue seulement si le visiteur n'a pas mis en pause, si la bannière est
-     à l'écran et si l'onglet est visible : on n'use pas la batterie pour rien. */
+  /* La vidéo tourne en permanence, même quand on a fait défiler la page.
+     Seul le bouton pause l'arrête. */
   function featureSync() {
-    var should = !feature.paused && feature.visible && !document.hidden;
-    if (should) featurePlay(); else featurePause();
+    if (!feature.paused) featurePlay(); else featurePause();
+  }
+  /* Si le navigateur la met en pause de lui-même (vidéo hors de l'écran,
+     onglet en arrière-plan…) alors que le visiteur n'a rien demandé, on la
+     relance aussitôt. */
+  function featureKeepAlive() {
+    if (!feature.paused) setTimeout(function () { if (!feature.paused) featurePlay(); }, 250);
   }
 
   function shown(media) {
@@ -687,7 +692,9 @@
       if (last) last.addEventListener("error", drop);
       v.addEventListener("error", drop);
       v.addEventListener("playing", function () { feature.playing = true; shown(v); setToggle(true); });
-      v.addEventListener("pause",   function () { setToggle(false); });
+      v.addEventListener("pause",   function () {
+        if (feature.paused) setToggle(false); else featureKeepAlive();
+      });
       media.appendChild(v);
       feature.video = v;
       featureSync();
@@ -723,7 +730,7 @@
           },
           onStateChange: function (e) {
             if (e.data === 1) { feature.playing = true; shown(slot); setToggle(true); }
-            if (e.data === 2) setToggle(false);
+            if (e.data === 2) { if (feature.paused) setToggle(false); else featureKeepAlive(); }
             /* Fin de la vidéo : retour au début sans laisser voir l'écran de fin. */
             if (e.data === 0) { e.target.seekTo(b.start || 0); e.target.playVideo(); }
           },
@@ -803,14 +810,9 @@
       else window.addEventListener("load", function () { setTimeout(go, 100); });
     }
 
-    if ("IntersectionObserver" in window) {
-      new IntersectionObserver(function (entries) {
-        feature.visible = entries[0].isIntersecting;
-        if (feature.video || feature.player) featureSync();
-      }, { threshold: 0.05 }).observe($("#hero") || sec);
-    }
+    /* Retour sur l'onglet : on s'assure que la vidéo tourne encore. */
     document.addEventListener("visibilitychange", function () {
-      if (feature.video || feature.player) featureSync();
+      if (!document.hidden && (feature.video || feature.player)) featureSync();
     });
   }
 

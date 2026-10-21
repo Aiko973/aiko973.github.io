@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dorian Simon - Game design &amp; programming</title>
+<meta name="description" content="Portfolio of Dorian Simon, game design and programming student at ISART Digital Paris. Unity and Godot projects.">
+<meta property="og:title" content="Dorian Simon - Game design &amp; programming">
+<meta property="og:description" content="Unity and Godot projects by a game design and programming student at ISART Digital Paris.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#eceef1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="home">
+
+<a class="skip" href="#work" data-i18n="skip">Skip to the projects</a>
+
+<header class="island-wrap">
+  <div class="island">
+    <a class="island__brand" href="index.html">Dorian&nbsp;Simon</a>
+    <nav class="island__nav" aria-label="Main">
+      <a class="island__link" href="#work"    data-i18n="nav_work">Work</a>
+      <a class="island__link" href="about.html" data-i18n="nav_about">About</a>
+      <a class="island__link" href="#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" id="lang-switch" data-i18n-aria-label="lang_label" aria-label="Language">
+      <button type="button" class="lang__btn is-on" data-lang="en" aria-pressed="true"  lang="en">EN</button>
+      <button type="button" class="lang__btn"       data-lang="fr" aria-pressed="false" lang="fr">FR</button>
+    </div>
+    <button type="button" class="burger" id="menu-btn" aria-expanded="false" aria-controls="menu"
+            data-i18n-aria-label="menu_open" aria-label="Open the menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" inert>
+  <nav aria-label="Main">
+    <a class="menu__link" href="index.html" style="--i:0"><span data-i18n="nav_home">Home</span></a>
+    <a class="menu__link" href="#work" style="--i:1"><span data-i18n="nav_work">Work</span></a>
+    <a class="menu__link" href="about.html" style="--i:2"><span data-i18n="nav_about">About</span></a>
+    <a class="menu__link" href="#contact" style="--i:3"><span data-i18n="nav_contact">Contact</span></a>
+  </nav>
+</div>
+
+<main id="top">
+
+  <!-- Hero : la video du projet a la une tourne en fond, derriere le nom -->
+  <section class="hero hero--video" id="hero">
+    <div class="feature__media hero__media" id="feature-media" aria-hidden="true"></div>
+    <div class="wrap hero__grid">
+      <div class="hero__text">
+        <p class="eyebrow eyebrow--live eyebrow--onmedia rise" style="--d:0" data-i18n="hero_eyebrow">Open to internships</p>
+        <h1 class="hero__name rise" style="--d:1" id="hero-name">Dorian Simon</h1>
+        <p class="hero__tagline rise" style="--d:2" id="hero-tagline"></p>
+        <a class="btn btn--light rise" style="--d:3" href="#work">
+          <span data-i18n="hero_cta">See the projects</span>
+          <span class="btn__icon" data-icon="arrow-right"></span>
+        </a>
+      </div>
+
+      <!-- Projet a la une : ce qui passe en fond, et le lien vers sa fiche -->
+      <aside class="hero__feature rise" style="--d:4" id="feature" data-i18n-aria-label="banner_label" aria-label="Featured project" hidden>
+        <a class="hero__feature-link" id="feature-cta" href="#">
+          <span class="hero__feature-text">
+            <span class="hero__feature-label" data-i18n="banner_label">Featured project</span>
+            <span class="hero__feature-title" id="feature-title"></span>
+            <span class="feature__meta" id="feature-meta"></span>
+          </span>
+          <span class="btn__icon" data-icon="arrow-up-right"></span>
+        </a>
+        <button type="button" class="feature__toggle" id="feature-toggle" hidden
+                data-i18n-aria-label="pause_video" aria-label="Pause the video"></button>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Chiffres -->
+  <section class="stats-band" aria-label="Key figures">
+    <div class="wrap">
+      <ul class="stats" id="stats"></ul>
+    </div>
+  </section>
+
+  <!-- Projets -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section__head" data-reveal>
+        <h2 class="section__title" data-i18n="work_title">Work</h2>
+        <div class="filter-stack">
+          <div class="filters" id="filters" role="group" data-i18n-aria-label="filter_type" aria-label="Project type"></div>
+          <div class="filters" id="filters-engine" role="group" data-i18n-aria-label="filter_engine" aria-label="Engine"></div>
+        </div>
+      </div>
+
+      <div id="groups"></div>
+
+      <div class="empty" id="empty" hidden>
+        <p class="empty__text" id="empty-text" role="status"></p>
+        <button type="button" class="btn btn--ghost" id="empty-reset">
+          <span data-i18n="reset_filters">Show all projects</span>
+          <span class="btn__icon" data-icon="arrow-right"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="wrap contact">
+      <div class="shell" data-reveal>
+        <div class="core">
+          <h2 class="contact__title" data-i18n="contact_title">Get in touch</h2>
+          <p class="contact__lead" data-i18n="contact_lead">Open to internships and team projects.</p>
+          <ul class="contact__list" id="contact-list"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <span>Dorian Simon</span>
+    <span id="year"></span>
+  </div>
+</footer>
+
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/content.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

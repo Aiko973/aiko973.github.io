@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About me - Dorian Simon</title>
+<meta name="description" content="Dorian Simon, game design and programming student at ISART Digital Paris: background, education and skills.">
+<meta name="theme-color" content="#eceef1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="about">
+
+<a class="skip" href="#story" data-i18n="skip_content">Skip to the content</a>
+
+<header class="island-wrap">
+  <div class="island">
+    <a class="island__brand" href="index.html">Dorian&nbsp;Simon</a>
+    <nav class="island__nav" aria-label="Main">
+      <a class="island__link" href="index.html#work"    data-i18n="nav_work">Work</a>
+      <a class="island__link" href="about.html" data-i18n="nav_about" aria-current="page">About</a>
+      <a class="island__link" href="#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" id="lang-switch" data-i18n-aria-label="lang_label" aria-label="Language">
+      <button type="button" class="lang__btn is-on" data-lang="en" aria-pressed="true"  lang="en">EN</button>
+      <button type="button" class="lang__btn"       data-lang="fr" aria-pressed="false" lang="fr">FR</button>
+    </div>
+    <button type="button" class="burger" id="menu-btn" aria-expanded="false" aria-controls="menu"
+            data-i18n-aria-label="menu_open" aria-label="Open the menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" inert>
+  <nav aria-label="Main">
+    <a class="menu__link" href="index.html" style="--i:0"><span data-i18n="nav_home">Home</span></a>
+    <a class="menu__link" href="index.html#work" style="--i:1"><span data-i18n="nav_work">Work</span></a>
+    <a class="menu__link" href="about.html" style="--i:2"><span data-i18n="nav_about">About</span></a>
+    <a class="menu__link" href="#contact" style="--i:3"><span data-i18n="nav_contact">Contact</span></a>
+  </nav>
+</div>
+
+<main>
+
+  <!-- En-tete -->
+  <section class="ab__hero">
+    <div class="wrap ab__head">
+      <div class="frame ab__photo rise" style="--d:1" id="ab-photo"></div>
+      <div class="ab__intro">
+        <p class="eyebrow rise" style="--d:0" data-i18n="about_page">About me</p>
+        <h1 class="ab__name rise" style="--d:1" id="ab-name">Dorian Simon</h1>
+        <p class="ab__role rise" style="--d:2" id="ab-role"></p>
+        <p class="ab__lead rise" style="--d:3" id="ab-lead"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Presentation -->
+  <section class="section" id="story">
+    <div class="wrap ab__story-grid">
+      <dl class="facts" id="ab-facts"></dl>
+      <div class="ab__story" id="ab-story"></div>
+    </div>
+  </section>
+
+  <!-- Parcours -->
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section__title" data-i18n="education" data-reveal>Education</h2>
+      <ul class="timeline" id="ab-education"></ul>
+    </div>
+  </section>
+
+  <!-- Competences -->
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section__title" data-i18n="skills" data-reveal>Skills</h2>
+      <div class="skills" id="ab-skills"></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <div class="wrap contact">
+      <div class="shell" data-reveal>
+        <div class="core">
+          <h2 class="contact__title" data-i18n="contact_title">Get in touch</h2>
+          <p class="contact__lead" data-i18n="contact_lead">Open to internships and team projects.</p>
+          <ul class="contact__list" id="contact-list"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <span>Dorian Simon</span>
+    <span id="year"></span>
+  </div>
+</footer>
+
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/content.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

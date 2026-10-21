@@ -1,0 +1,13 @@
+# Alternative à nginx : Caddy gère le certificat Let's Encrypt tout seul.
+#   caddy run --config Caddyfile
+# Remplace le domaine par le tien avant de lancer.
+
+portfolio.exemple.fr {
+    root * /var/www/dorian-portfolio
+    encode gzip zstd
+    file_server
+    header {
+        X-Content-Type-Options nosniff
+        Referrer-Policy strict-origin-when-cross-origin
+    }
+}

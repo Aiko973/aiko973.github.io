@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Project - Dorian Simon</title>
+<meta name="description" content="Project by Dorian Simon, game design and programming student at ISART Digital Paris.">
+<meta name="theme-color" content="#eceef1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="project">
+
+<a class="skip" href="#pj-article" data-i18n="skip_content">Skip to the content</a>
+
+<header class="island-wrap">
+  <div class="island">
+    <a class="island__brand" href="index.html">Dorian&nbsp;Simon</a>
+    <nav class="island__nav" aria-label="Main">
+      <a class="island__link" href="index.html#work"    data-i18n="nav_work" aria-current="location">Work</a>
+      <a class="island__link" href="about.html" data-i18n="nav_about">About</a>
+      <a class="island__link" href="index.html#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="lang" role="group" id="lang-switch" data-i18n-aria-label="lang_label" aria-label="Language">
+      <button type="button" class="lang__btn is-on" data-lang="en" aria-pressed="true"  lang="en">EN</button>
+      <button type="button" class="lang__btn"       data-lang="fr" aria-pressed="false" lang="fr">FR</button>
+    </div>
+    <button type="button" class="burger" id="menu-btn" aria-expanded="false" aria-controls="menu"
+            data-i18n-aria-label="menu_open" aria-label="Open the menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" inert>
+  <nav aria-label="Main">
+    <a class="menu__link" href="index.html" style="--i:0"><span data-i18n="nav_home">Home</span></a>
+    <a class="menu__link" href="index.html#work" style="--i:1"><span data-i18n="nav_work">Work</span></a>
+    <a class="menu__link" href="about.html" style="--i:2"><span data-i18n="nav_about">About</span></a>
+    <a class="menu__link" href="index.html#contact" style="--i:3"><span data-i18n="nav_contact">Contact</span></a>
+  </nav>
+</div>
+
+<main class="page">
+  <div class="wrap">
+
+    <p class="crumb">
+      <a class="btn btn--ghost btn--lead" href="index.html#work">
+        <span class="btn__icon" data-icon="arrow-left"></span>
+        <span data-i18n="back_work">All projects</span>
+      </a>
+    </p>
+
+    <!-- Projet inconnu (mauvais ?id=) -->
+    <div id="pj-missing" hidden>
+      <h1 class="pj__title" id="pj-missing-text">This project doesn't exist (any more).</h1>
+    </div>
+
+    <article id="pj-article" hidden>
+      <header class="pj__head">
+        <p class="pj__meta rise" style="--d:0" id="pj-meta"></p>
+        <h1 class="pj__title rise" style="--d:1" id="pj-title"></h1>
+        <p class="pj__summary rise" style="--d:2" id="pj-summary"></p>
+      </header>
+
+      <div class="pj__cols">
+        <div class="pj__main">
+          <div class="pj__video" id="pj-video" hidden></div>
+          <div class="pj__text" id="pj-text"></div>
+
+          <section class="pj__contrib" id="pj-contrib" hidden>
+            <h2 data-i18n="contribution">My contribution</h2>
+            <ul class="chips" id="pj-contrib-list"></ul>
+          </section>
+        </div>
+
+        <aside class="pj__side">
+          <div class="pj__media" id="pj-media"></div>
+          <div id="pj-specs"></div>
+          <div class="pj__links" id="pj-links"></div>
+        </aside>
+      </div>
+
+      <nav class="pj__nav" data-i18n-aria-label="nav_projects" aria-label="Projects">
+        <div id="pj-prev" hidden></div>
+        <div id="pj-next" hidden></div>
+      </nav>
+
+      <p class="crumb crumb--bottom">
+        <a class="btn btn--ghost btn--lead" href="index.html#work">
+          <span class="btn__icon" data-icon="arrow-left"></span>
+          <span data-i18n="back_work">All projects</span>
+        </a>
+      </p>
+    </article>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <span>Dorian Simon</span>
+    <span id="year"></span>
+  </div>
+</footer>
+
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/content.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

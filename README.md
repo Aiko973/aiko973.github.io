@@ -19,9 +19,9 @@
 
 ## À propos de moi
 
-Ce sont mes grands frères qui m'ont fait découvrir le jeu vidéo, et depuis, je n'ai
+C'est mon grand frère qui m'a fait découvrir le jeu vidéo, et depuis, je n'ai
 jamais arrêté de vouloir faire les miens. Je suis aujourd'hui en Mastère Game
-Design & Programmation à l'ISART Digital Paris, que j'ai rejoint en 2024.
+Design & Programmation à l'ISART Digital Paris, que j'ai rejoint en 2025.
 
 Ce qui me plaît le plus, c'est le moment où une règle simple devient un
 système : une grille qu'on lit d'un coup d'œil, une économie qui tient

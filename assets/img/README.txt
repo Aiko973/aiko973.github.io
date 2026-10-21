@@ -12,7 +12,9 @@ Images du site. Elles sont toutes la, rien a telecharger.
   plink-town-ressource.png   Scriptable Object d'une ressource (Plink Town)
   stjerne-blizzard.png       la brique "blizzard" dans l'inspecteur (Stjerne)
   dorian.jpg                 photo de la page "a propos"
-  favicon.svg                icone de l'onglet
+  favicon.ico, favicon-32.png, favicon-192.png
+                             icone de l'onglet (l'etoile de Stjerne)
+  apple-touch-icon.png       icone sur l'ecran d'accueil d'un iPhone
 
 Pour remplacer une image : garder le meme nom de fichier, rien d'autre a
 faire. Pour changer de nom ou d'extension, mettre a jour "cover" / "media"
